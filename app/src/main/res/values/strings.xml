@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Pool Time Chemical Calculator</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="ph_prompt">Preferred Chemical to Lower pH</string>
+    <string name="alk_prompt">Preferred Chemical to Lower Alkalinity</string>
+    <string-array name="chemicals">
+        <item>Muriatic Acid</item>
+        <item>Dry Acid</item>
+    </string-array>
+</resources>
