@@ -2,9 +2,10 @@
 <ScrollView
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical">
@@ -13,7 +14,7 @@
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="2dp"
             android:src="@drawable/pool" />
 
         <EditText
@@ -22,8 +23,7 @@
             android:layout_height="50dp"
             android:layout_below="@+id/imageView"
             android:layout_centerHorizontal="true"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:editable="true"
             android:enabled="true"
             android:hint="pH Value"
@@ -37,8 +37,8 @@
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_below="@+id/valuePh"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
             android:editable="true"
             android:enabled="true"
             android:hint="Gallons"
@@ -52,8 +52,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/gallonsPh"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
             android:text="Preferred Chemical to Lower pH"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -63,8 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/textPh"
             android:layout_centerHorizontal="true"
-            android:layout_gravity="center"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="5dp"
             android:clickable="true"
             android:entries="@array/chemicals"
             android:focusableInTouchMode="false"
@@ -76,10 +75,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/spinnerPh"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
             android:onClick="calcPh"
             android:text="Calculate" />
 
-    </LinearLayout>
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adViewPh"
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/buttonPh"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/banner_ad_unit_id_1">
+
+        </com.google.android.gms.ads.AdView>
+
+    </RelativeLayout>
 </ScrollView>

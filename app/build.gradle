@@ -7,8 +7,8 @@ android {
         applicationId "me.roguemc9000.pooltimechemicalcalculator"
         minSdkVersion 11
         targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "2.1"
     }
     buildTypes {
         release {
@@ -24,4 +24,5 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:22.2.0'
     compile 'com.android.support:design:22.2.0'
+    compile 'com.google.android.gms:play-services-ads:7.5.0'
 }

@@ -2,6 +2,7 @@ package me.roguemc9000.pooltimechemicalcalculator;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.provider.Settings;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
@@ -12,11 +13,14 @@ import android.view.View;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+
 
 public class MainActivity extends ActionBarActivity {
 
     private double PH = 7.5;
     private int ALKALINITY = 100;
+    public static AdRequest adRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +32,9 @@ public class MainActivity extends ActionBarActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
         tabLayout.setupWithViewPager(viewPager);
+
+        adRequest = new AdRequest.Builder().addTestDevice("F8997865B0017036").addKeyword("pool").build();
+
     }
 
     @Override
