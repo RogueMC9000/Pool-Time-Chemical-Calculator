@@ -30,7 +30,14 @@ public class PageFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(mPage == 1 ? R.layout.ph_fragment : R.layout.alk_fragment, container, false);
+        View view = null;
+        switch (mPage) {
+            case 1: view = inflater.inflate(R.layout.ph_fragment, container, false);
+                break;
+            case 2: view = inflater.inflate(R.layout.alk_fragment, container, false);
+                break;
+            case 3: view = inflater.inflate(R.layout.gal_fragment, container, false);
+        }
         return view;
     }
 }

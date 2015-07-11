@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
 
-    private double PH = 7.4;
+    private double PH = 7.5;
     private int ALKALINITY = 100;
 
     @Override
@@ -78,7 +78,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void calcAlk(View view) {
-        int alk = Integer.parseInt(((TextView)findViewById(R.id.valueAlk)).getText().toString());
+        int alk = Integer.parseInt(((TextView) findViewById(R.id.valueAlk)).getText().toString());
         int gallons = Integer.parseInt(((TextView)findViewById(R.id.gallonsAlk)).getText().toString());
         String pref = ((Spinner)findViewById(R.id.spinnerAlk)).getSelectedItem().toString();
         boolean greater = alk - ALKALINITY > 0;
@@ -101,4 +101,19 @@ public class MainActivity extends ActionBarActivity {
         builder.create();
         builder.show();
     }
+
+    public void calcGal(View view) {
+        int ft = Integer.parseInt(((TextView)findViewById(R.id.valueGal)).getText().toString());
+        int gallons = (int)Math.round(ft * 7.48);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this); builder.setNeutralButton("Okay", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setTitle("Gallons Calculator").setMessage("Your pool has about " + gallons + " gallons.");
+        builder.create();
+        builder.show();
+    }
+
 }

@@ -9,8 +9,8 @@ import android.support.v4.app.FragmentPagerAdapter;
  * Created by Nico on 7/7/2015.
  */
 public class PagerFragmentAdapter extends FragmentPagerAdapter {
-    final int PAGE_COUNT = 2;
-    private String[] tabTitles = new String[] {"pH Calculator", "Alkalinity Calculator"};
+    final int PAGE_COUNT = 3;
+    private String[] tabTitles = new String[] {"pH Calculator", "Alkalinity Calculator", "Cubic Feet -> Gallons"};
     private Context context;
 
     public PagerFragmentAdapter(FragmentManager fm, Context context) {

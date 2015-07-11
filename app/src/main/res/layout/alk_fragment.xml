@@ -1,78 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:src="@drawable/pool"
-        android:id="@+id/imageView"
-        android:layout_marginTop="5dp"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <EditText
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:editable="true"
-        android:enabled="true"
-        android:hint="Alkalinity Value"
-        android:id="@+id/valueAlk"
-        android:textAlignment="center"
-        android:numeric="decimal"
-        android:inputType="number"
-        android:singleLine="true"
-        android:layout_marginTop="15dp"
-        android:layout_gravity="center"
-        android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="true" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/pool" />
 
-    <EditText
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:editable="true"
-        android:enabled="true"
-        android:hint="Gallons"
-        android:id="@+id/gallonsAlk"
-        android:textAlignment="center"
-        android:numeric="integer"
-        android:inputType="number"
-        android:singleLine="true"
-        android:layout_marginTop="5dp"
-        android:layout_below="@+id/valueAlk"
-        android:layout_centerHorizontal="true"
-        />
+        <EditText
+            android:id="@+id/valueAlk"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/imageView"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:editable="true"
+            android:enabled="true"
+            android:hint="Alkalinity Value"
+            android:inputType="number"
+            android:numeric="decimal"
+            android:singleLine="true"
+            android:textAlignment="center" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Preferred Chemical to Lower Alkalinity"
-        android:id="@+id/textAlk"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/gallonsAlk"
-        android:layout_centerHorizontal="true" />
+        <EditText
+            android:id="@+id/gallonsAlk"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/valueAlk"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:editable="true"
+            android:enabled="true"
+            android:hint="Gallons"
+            android:inputType="number"
+            android:numeric="integer"
+            android:singleLine="true"
+            android:textAlignment="center" />
 
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/spinnerAlk"
-        android:layout_below="@+id/textAlk"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="7dp"
-        android:clickable="true"
-        android:entries="@array/chemicals"
-        android:focusableInTouchMode="false"
-        android:spinnerMode="dropdown"
-        android:prompt="@string/alk_prompt" />
+        <TextView
+            android:id="@+id/textAlk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/gallonsAlk"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Preferred Chemical to Lower Alkalinity"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Calculate"
-        android:layout_marginTop="10dp"
-        android:id="@+id/buttonAlk"
-        android:layout_below="@+id/spinnerAlk"
-        android:layout_centerHorizontal="true"
-        android:onClick="calcAlk"/>
+        <Spinner
+            android:id="@+id/spinnerAlk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textAlk"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="7dp"
+            android:clickable="true"
+            android:layout_gravity="center"
+            android:entries="@array/chemicals"
+            android:focusableInTouchMode="false"
+            android:prompt="@string/alk_prompt"
+            android:spinnerMode="dropdown" />
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/buttonAlk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spinnerAlk"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:onClick="calcAlk"
+            android:text="Calculate" />
+
+    </LinearLayout>
+</ScrollView>
